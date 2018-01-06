@@ -1,8 +1,8 @@
-from app import startasthread, startping
-def sp(a, b, c, d, e, f, g, h, i):
-    '''store.get(), test.get(), pingnumber.get(), ping, cancelping, prefix.get(), options, storetxt'''
-    i["store"] = a
-    i["test"] = b
-    i["pingnumber"] = c
-    i["prefix"] = g
-    startasthread(startping(a, b, c, d, e, f, g, h, i))
+from app import startasthread, startping, pingcomponents
+def sp(a, b, c, d, e, f, g, h):
+    '''a store.get(), b test.get(), c pingnumber.get(), d ping, e cancelping, f prefix.get(), g options, h storetxt'''
+    pingcomponents.pingcomponents["store"] = a
+    pingcomponents.pingcomponents["test"] = b
+    pingcomponents.pingcomponents["pingnumber"] = c
+    pingcomponents.pingcomponents["prefix"] = f
+    startasthread.startasthread(startping.startping(a, b, c, d, e, f, g, h))

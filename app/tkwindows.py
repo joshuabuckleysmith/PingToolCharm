@@ -1,21 +1,12 @@
-import tkinter as tk
 import threading
+import tkinter as tk
 from time import sleep
-from app import killthread, startasthread, startping, sp
+from app import killthread, sp, pingcomponents, startasthread
 
-pingcomponents = {}
-pingcomponents["store"] = 1
-pingcomponents["test"] = "primary"
-pingcomponents["pingnumber"] = "1"
-pingcomponents["prefix"] = "IP Address"
-pingcomponents["cancelled"] = "0"
-T = threading.Thread
+
 root = tk.Tk()
 
-
-
-
-def tkbuttons():
+def buttons():
     test = tk.StringVar()
     pingnumber = tk.IntVar()
     store = tk.StringVar()
@@ -23,9 +14,6 @@ def tkbuttons():
     prefix.set("IP Address")
     options = {"Router(dg)": "dg", "Switch US(ussw010)": "ussw010", "Switch Canada(casw010)": "casw010",
                "Workstation(mws)": "mws", "IP Address": ""}
-    global pingcomponents
-
-
     '''creates tk window'''
     testbutton = tk.Checkbutton(text="Set MTU to 4000 (default 1345)", variable=test, onvalue="secondary",
                                 offvalue="primary", )
@@ -39,16 +27,17 @@ def tkbuttons():
     pingentry.grid(row=1, column=2)
     storeentry = tk.Entry(text="Store Number", textvariable=store)
     storeentry.grid(row=1, column=1)
-    dropdown = tk.OptionMenu(root, prefix, *options)
-    dropdown.grid(row=1, column=0)
+    dropout = tk.OptionMenu(root, prefix, *options)
+    dropout.grid(row=1, column=0)
+
     # Ping command, sends store, test, pingnumber, ping, cancelping, prefix options and storetxt)
     def spf():
-        sp.sp(store.get(), test.get(), pingnumber.get(), ping, cancelping, prefix.get(), options, storetxt, pingcomponents)
+        sp.sp(store.get(), test.get(), pingnumber.get(), ping, cancelping, prefix.get(), options, storetxt)
     ping = tk.Button(text="Start Ping", command=spf)
     ping.grid(row=1, column=3)
     # cancelping = tk.Button(text="Cancel Ping", command=lambda:killthread(cancelping, ping))
     def killthreadf():
-        killthread(cancelping, ping)
+        killthread.killthread(cancelping, ping)
     cancelping = tk.Button(text="Cancel Ping", command=killthreadf)
     cancelping['state'] = 'disabled'
     cancelping.grid(row=1, column=4)
@@ -64,9 +53,10 @@ def tkbuttons():
                 button2['text'] = "IP Address"
             if button1.get() != "IP Address":
                 button2['text'] = "Store Number"
-    textdaemon = T(target=updatetext, args=[prefix, storetxt])
+    textdaemon = startasthread.T(target=updatetext, args=[prefix, storetxt])
     textdaemon.setDaemon(True)
     textdaemon.start()
 
-tkbuttons()
-root.mainloop()
+    root.mainloop()
+
+

@@ -1,9 +1,19 @@
+import threading
+from app import testpingnumber
+from app import pingcomponents
+from app import pinger
+
+import IPy
+
+
+T=threading.Thread
+
 def startping(store, test, pingnumber, buttondis, buttonen, prefix, options, storetxt):
-    global pingcomponents
+
     pingsize = 0
-    store = pingcomponents["store"]
-    pingnumber = pingcomponents["pingnumber"]
-    prefix = pingcomponents["prefix"]
+    store = pingcomponents.pingcomponents["store"]
+    pingnumber = pingcomponents.pingcomponents["pingnumber"]
+    prefix = options[pingcomponents.pingcomponents["prefix"]]
     print("store {}".format(store))
     print("test {}".format(test))
     print("pingno {}".format(pingnumber))
@@ -14,7 +24,7 @@ def startping(store, test, pingnumber, buttondis, buttonen, prefix, options, sto
         pingsize = "1345"
     else:
         pingsize = "4000"
-    if testpingnumber(pingnumber) == True:
+    if testpingnumber.testpingnumber(pingnumber) == True:
         print("pingnumber tested true")
         if prefix != "IP Address":
             print("prefix did not equal IP Address")
@@ -23,14 +33,14 @@ def startping(store, test, pingnumber, buttondis, buttonen, prefix, options, sto
         if prefix == "":
             print("prefix equals nothing")
             try:
-                IP(store)
+                IPy.IP(store)
                 # print(IP(store))
-                print('Pinging ip address {} with {} bytes {} times.'.format(IP(store), pingsize, pingnumber))
+                print('Pinging ip address {} with {} bytes {} times.'.format(IPy.IP(store), pingsize, pingnumber))
             except:
                 raise
         buttonen['state'] = 'normal'
         buttondis['state'] = 'disabled'
-        pingthread = T(target=pinger, args=[store, pingnumber, test, buttondis, buttonen, prefix])
+        pingthread = T(target=pinger.pinger, args=[store, pingnumber, test, buttondis, buttonen, prefix])
         pingthread.start()
     else:
         print('Number of pings was not a number.')

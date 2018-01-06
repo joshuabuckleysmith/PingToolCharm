@@ -6,7 +6,7 @@ from app import printer, startasthread, pingcomponents
 def pinger(store, pingnumber, primsec, buttondis, buttonen, prefix):
     # print(prefix)
     '''Takes a store number, index as INT, primsec as STRING sets primary or secondary test'''
-    print("\n")
+    print("**********************************")
     if primsec == "primary":
         print("ping -n {} -l 1345 {}{} > 1\\temp{}.txt".format(pingnumber, prefix, store, store))
         pingthread = Popen("ping -n {} -l 1345 {}{} > 1\\temp{}.txt".format(pingnumber, prefix, store, store), shell=True)
@@ -14,7 +14,7 @@ def pinger(store, pingnumber, primsec, buttondis, buttonen, prefix):
         print("ping -n {} -l 4000 {}{} > 1\\temp{}.txt".format(pingnumber, prefix, store, store))
         pingthread = Popen("ping -n {} -l 4000 {}{} > 1\\temp{}.txt".format(pingnumber, prefix, store, store), shell=True)
     pingcomponents.pingcomponents["process"] = pingthread.pid
-    print(pingcomponents.pingcomponents["process"])
+    #print(pingcomponents.pingcomponents["process"])
     outputthread = startasthread.T(target=printer.printer, args=[pingthread, store, prefix])
     outputthread.start()
     while True:

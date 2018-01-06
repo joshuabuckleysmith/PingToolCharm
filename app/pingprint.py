@@ -51,6 +51,8 @@ def pingprint(openfile):
         timesints = []
         for time in times:
             timesints.append(int(time))
+        if len(timesints) == 0:
+            timesints.append(0)
         sumtime = sum(timesints)
         lentime = len(timesints)
         avetime = int(sumtime / lentime)

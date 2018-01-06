@@ -60,7 +60,7 @@ def buttons():
     exit.grid(row=2, column=1)
     root.bind('<Return>', sp)
     root.title("Starbucks Ping")
-    print("1")
+    #print("1")
     def textdaemonf(prefix, storetxt):
         while True:
             if prefix.get() == "IP Address":

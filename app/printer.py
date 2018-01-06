@@ -5,7 +5,7 @@ def printer(monitoredthread, store, prefix):
     sleep(1)
     while True:
         sleep(0.05)
-        openfile = open("temp{}.txt".format(store), 'r')
+        openfile = open("1\\temp{}.txt".format(store), 'r')
         openstring = str(openfile.read())
         if openstring == "Ping request could not find host {}{}. Please check the name and try again.\n".format(prefix,
                                                                                                                 store):

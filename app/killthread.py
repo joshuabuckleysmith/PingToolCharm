@@ -20,6 +20,7 @@ def killthread(buttondis, buttonen):
     # print("pid is {} ".format(process))
     os.system("TASKKILL /F /PID {} /T".format(process))
     # os.system("TASKKILL /F /PID {} /T > nul".format(process))
-    openfile = open("temp{}.txt".format(store), 'r')
+    openfile = open("1\\temp{}.txt".format(store), 'r')
     pingprint.pingprint(openfile)
+    openfile.close()
 

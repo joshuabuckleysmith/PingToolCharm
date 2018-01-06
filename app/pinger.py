@@ -8,11 +8,11 @@ def pinger(store, pingnumber, primsec, buttondis, buttonen, prefix):
     '''Takes a store number, index as INT, primsec as STRING sets primary or secondary test'''
     print("\n")
     if primsec == "primary":
-        print("ping -n {} -l 1345 {}{} > temp{}.txt".format(pingnumber, prefix, store, store))
-        pingthread = Popen("ping -n {} -l 1345 {}{} > temp{}.txt".format(pingnumber, prefix, store, store), shell=True)
+        print("ping -n {} -l 1345 {}{} > 1\\temp{}.txt".format(pingnumber, prefix, store, store))
+        pingthread = Popen("ping -n {} -l 1345 {}{} > 1\\temp{}.txt".format(pingnumber, prefix, store, store), shell=True)
     if primsec == "secondary":
-        print("ping -n {} -l 4000 {}{} > temp{}.txt".format(pingnumber, prefix, store, store))
-        pingthread = Popen("ping -n {} -l 4000 {}{} > temp{}.txt".format(pingnumber, prefix, store, store), shell=True)
+        print("ping -n {} -l 4000 {}{} > 1\\temp{}.txt".format(pingnumber, prefix, store, store))
+        pingthread = Popen("ping -n {} -l 4000 {}{} > 1\\temp{}.txt".format(pingnumber, prefix, store, store), shell=True)
     pingcomponents.pingcomponents["process"] = pingthread.pid
     print(pingcomponents.pingcomponents["process"])
     outputthread = startasthread.T(target=printer.printer, args=[pingthread, store, prefix])
@@ -33,5 +33,5 @@ def pinger(store, pingnumber, primsec, buttondis, buttonen, prefix):
             print("\nPing Complete. Start a new ping with the GUI.")
             buttondis['state'] = 'normal'  # reenables buttons when ping completes.
             buttonen['state'] = 'disabled'
-            os.system("del temp{}.txt".format(store))
+            os.system("del 1\\temp{}.txt".format(store))
             break

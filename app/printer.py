@@ -44,6 +44,9 @@ def printer(monitoredthread, store, prefix):
                     print(outputstring.splitlines()[len3 - 4])
                     print(outputstring.splitlines()[len3 - 3])
                     print(outputstring.splitlines()[len3 - 2])
+                    print('\n')
+                    print('\n')
+
                 except:
                     print("nothing to print")
             openfile.close()

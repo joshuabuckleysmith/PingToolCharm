@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ad38e34-bf2b-49cf-a0b1-d939899ffca9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Main.py" afterPath="$PROJECT_DIR$/Main.py" />
-      <change beforePath="$PROJECT_DIR$/app/killthread.py" afterPath="$PROJECT_DIR$/app/killthread.py" />
-      <change beforePath="$PROJECT_DIR$/app/pinger.py" afterPath="$PROJECT_DIR$/app/pinger.py" />
       <change beforePath="$PROJECT_DIR$/app/pingprint.py" afterPath="$PROJECT_DIR$/app/pingprint.py" />
       <change beforePath="$PROJECT_DIR$/app/printer.py" afterPath="$PROJECT_DIR$/app/printer.py" />
-      <change beforePath="$PROJECT_DIR$/app/startping.py" afterPath="$PROJECT_DIR$/app/startping.py" />
-      <change beforePath="$PROJECT_DIR$/app/tkwindows.py" afterPath="$PROJECT_DIR$/app/tkwindows.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="startasthread.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="startasthread.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/startasthread.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -56,7 +51,7 @@
       <file leaf-file-name="startping.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/startping.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
+            <state relative-caret-position="527">
               <caret line="31" column="30" lean-forward="false" selection-start-line="30" selection-start-column="12" selection-end-line="31" selection-end-column="30" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
@@ -65,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pingprint.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pingprint.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pingprint.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="57" column="32" lean-forward="false" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+            <state relative-caret-position="1768">
+              <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -78,8 +73,8 @@
       <file leaf-file-name="printer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/printer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="51" column="17" lean-forward="false" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
+            <state relative-caret-position="816">
+              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -110,7 +105,7 @@
       <file leaf-file-name="tkwindows.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/tkwindows.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="952">
               <caret line="56" column="36" lean-forward="false" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -153,10 +148,11 @@
       <find>timesints</find>
       <find>prefix</find>
       <find>print</find>
-      <find>complete</find>
       <find>store</find>
-      <find>pingprin</find>
       <find>prefix</find>
+      <find>ipadd</find>
+      <find>complete</find>
+      <find>pingprin</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -177,11 +173,11 @@
         <option value="$PROJECT_DIR$/app/sp.py" />
         <option value="$PROJECT_DIR$/app/tkwindows.py" />
         <option value="$PROJECT_DIR$/Main.py" />
-        <option value="$PROJECT_DIR$/app/printer.py" />
         <option value="$PROJECT_DIR$/app/pinger.py" />
         <option value="$PROJECT_DIR$/app/startping.py" />
         <option value="$PROJECT_DIR$/app/killthread.py" />
         <option value="$PROJECT_DIR$/app/pingprint.py" />
+        <option value="$PROJECT_DIR$/app/printer.py" />
       </list>
     </option>
   </component>
@@ -512,10 +508,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pingcomponents.py">
+    <entry file="file://$PROJECT_DIR$/app/startping.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+        <state relative-caret-position="527">
+          <caret line="31" column="30" lean-forward="false" selection-start-line="30" selection-start-column="12" selection-end-line="31" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pingprint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/printer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="82" lean-forward="false" selection-start-line="2" selection-start-column="82" selection-end-line="2" selection-end-column="82" />
           <folding />
         </state>
       </provider>
@@ -532,7 +554,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tkwindows.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="952">
           <caret line="56" column="36" lean-forward="false" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -540,47 +562,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/startping.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="31" column="30" lean-forward="false" selection-start-line="30" selection-start-column="12" selection-end-line="31" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/printer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="51" column="17" lean-forward="false" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/sp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="82" lean-forward="false" selection-start-line="2" selection-start-column="82" selection-end-line="2" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/startasthread.py">
+    <entry file="file://$PROJECT_DIR$/app/pingcomponents.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pinger.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -594,10 +580,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pingprint.py">
+    <entry file="file://$PROJECT_DIR$/app/pinger.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="57" column="32" lean-forward="false" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+        <state relative-caret-position="170">
+          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/startasthread.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>

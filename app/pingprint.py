@@ -102,5 +102,7 @@ def pingprint(openfile, store):
     print(
         '\nPing statistics for {}:\nPackets: Sent = {}, Received = {}, Lost = {} ({}% loss),\nApproximate round trip times in milli-seconds:\nMinimum = {}ms, Maximum = {}ms, Average = {}ms'.format(
             store, sent_total, received_total, lost_total, loss_total, mintime, maxtime, avetime))
+    print('\n')
+    print('\n')
 
 

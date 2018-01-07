@@ -20,7 +20,7 @@ def pinger(store, pingnumber, primsec, buttondis, buttonen, prefix):
         threadalive2 = bool(outputthread.is_alive())
         sleep(0.02)
         if threadalive2 == False:
-            sleep(0.05)
+            sleep(0.02)
             buttondis['state'] = 'normal'  # reenables buttons when ping completes.
             buttonen['state'] = 'disabled'
             os.system("del 1\\temp{}.txt".format(store))

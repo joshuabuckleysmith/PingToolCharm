@@ -19,9 +19,12 @@ def startping(store, test, pingnumber, buttondis, buttonen, prefix, options, sto
                 IPy.IP(store)
             except:
                 raise
-        buttonen['state'] = 'normal'
-        buttondis['state'] = 'disabled'
-        pingthread = T(target=pinger.pinger, args=[store, pingnumber, test, buttondis, buttonen, prefix])
-        pingthread.start()
+        if pingnumber != 0:
+            buttonen['state'] = 'normal'
+            buttondis['state'] = 'disabled'
+            pingthread = T(target=pinger.pinger, args=[store, pingnumber, test, buttondis, buttonen, prefix])
+            pingthread.start()
+        if pingnumber == 0:
+            print("Can't ping zero times")
     else:
         print('Number of pings was not a number.')

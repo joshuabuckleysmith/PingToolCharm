@@ -29,9 +29,11 @@ def startping(store, test, pingnumber, buttondis, buttonen, prefix, options, sto
         if prefix != "IP Address":
             #print("prefix did not equal IP Address")
             store = (str(store).zfill(5))
+            store = store[-5:]
+
             #print('Pinging {}{} with {} bytes {} times.'.format(prefix, store, pingsize, pingnumber))
         if prefix == "":
-            print("prefix equals nothing")
+            #print("prefix equals nothing")
             try:
                 IPy.IP(store)
                 # print(IP(store))

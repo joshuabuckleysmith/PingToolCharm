@@ -19,7 +19,7 @@ pingnumber = tk.IntVar()
 store = tk.StringVar()
 prefix = tk.StringVar()
 prefix.set("IP Address")
-
+storetxt = tk.Label(text="Store Number")
 
 def destroyapp():
     os.system("rmdir 1 /s /q")
@@ -61,6 +61,8 @@ def buttons():
     root.bind('<Return>', sp)
     root.title("Starbucks Ping")
     #print("1")
+
+
     def textdaemonf(prefix, storetxt):
         while True:
             if prefix.get() == "IP Address":
@@ -68,6 +70,8 @@ def buttons():
             if prefix.get() != "IP Address":
                 storetxt['text'] = "Store Number"
             sleep(0.05)
+
+
     textdaemon = startasthread.T(target=textdaemonf, args=[prefix, storetxt])
     textdaemon.setDaemon(True)
     textdaemon.start()

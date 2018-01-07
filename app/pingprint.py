@@ -1,5 +1,5 @@
 import re
-def pingprint(openfile):
+def pingprint(openfile, store):
     sent_total = 0
     received_total = 0
     lost_total = 0
@@ -8,55 +8,59 @@ def pingprint(openfile):
     minimum_total = 100000000
     average_total = 0
     openstring = str(openfile.read())
-    print('openfile is {} and open string is {}'.format(openfile, openstring))
+    #print('openfile is {} and open string is {}'.format(openfile, openstring))
     pingcount = (len(openstring.split('\n')))
     pingcount = pingcount - 3
-    print('pingcount is {}'.format(pingcount))
-    try:
-        ipadd = re.compile('(?<=Pinging )[0-9]+.[0-9]+.[0-9]+.[0-9]+')
-        ipadd = ((ipadd.search(openstring).group(0)))
-        print('ip address is {}'.format(ipadd))
-    except:
-        ipadd = "none"
-        print('ipadd not found')
+    #print('pingcount is {}'.format(pingcount))
+    # try:
+    #     ipadd = re.compile('(?<=Pinging )[0-9]+.[0-9]+.[0-9]+.[0-9]+')
+    #     ipadd = ((ipadd.search(openstring).group(0)))
+    #     #print('ip address is {}'.format(ipadd))
+    # except:
+    #     ipadd = "none"
+    #     #print('ipadd not found')
+
     try:
         # sent = re.compile('(?<=Sent = )[0-9]')
         # sent = ((sent.search(openstring).group(0)))
         sent = pingcount
-        print('sent was found it is {}'.format(sent))
+        #print('sent was found it is {}'.format(sent))
     except:
         sent = "0"
-        print('sent was not found, it is now {}'.format(sent))
+        #print('sent was not found, it is now {}'.format(sent))
     try:
-        print('received before search string {}'.format(openstring))
+        #print('received before search string {}'.format(openstring))
         received = re.compile('(?<=Reply from )')
         received = ((received.findall(openstring)))
         received = len(received)
-        print('received {}'.format(received))
+        #print('received {}'.format(received))
     except:
         received = "0"
-        print('received was not found, it is {}'.format(received))
+        #print('received was not found, it is {}'.format(received))
     try:
         lost = sent - received
     except:
         lost = "0"
-        print('lost was {}'.format(lost))
+        #print('lost was {}'.format(lost))
     try:
         times = re.compile('(?<=time.)[0-9]*')
-        print('times before search {} and string {}'.format(times, openstring))
+        #print('times before search {} and string {}'.format(times, openstring))
         times = ((times.findall(openstring)))
-        print('times {}'.format(times))
-        maxtime = max(times)
-        mintime = min(times)
+        #print('times {}'.format(times))
         timesints = []
-        for time in times:
-            timesints.append(int(time))
-        if len(timesints) == 0:
+        try:
+            for time in times:
+                timesints.append(int(time))
+        except:
             timesints.append(0)
+            timesints.append(0)
+            timesints.append(0)
+        maxtime = max(timesints)
+        mintime = min(timesints)
         sumtime = sum(timesints)
         lentime = len(timesints)
         avetime = int(sumtime / lentime)
-        print('max {} min {} average {}'.format(maxtime, mintime, avetime))
+        #print('max {} min {} average {}'.format(maxtime, mintime, avetime))
     except:
         raise
     try:
@@ -94,9 +98,9 @@ def pingprint(openfile):
         percentage_lost = (lost_total / sent_total * 100)
     except:
         percentage_lost = "0"
-    print('\nPing Statistics: \n')
+    #print('\nPing Statistics: \n')
     print(
-        'Ping statistics for {}:\nPackets: Sent = {}, Received = {}, Lost = {} ({}% loss),\nApproximate round trip times in milli-seconds:\nMinimum = {}ms, Maximum = {}ms, Average = {}ms'.format(
-            ipadd, sent_total, received_total, lost_total, loss_total, maxtime, mintime, avetime))
+        '\nPing statistics for {}:\nPackets: Sent = {}, Received = {}, Lost = {} ({}% loss),\nApproximate round trip times in milli-seconds:\nMinimum = {}ms, Maximum = {}ms, Average = {}ms'.format(
+            store, sent_total, received_total, lost_total, loss_total, mintime, maxtime, avetime))
 
 

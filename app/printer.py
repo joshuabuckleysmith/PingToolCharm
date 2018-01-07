@@ -37,14 +37,15 @@ def printer(monitoredthread, store, prefix):
         if th1 != None:
             # print("monitoredthread.poll() was {}".format(monitoredthread.poll()))
             # print("lines = {}".format(len(outputstring.split('\n'))))
-            try:
-                print("\n")
-                print(outputstring.splitlines()[len3 - 5])
-                print(outputstring.splitlines()[len3 - 4])
-                print(outputstring.splitlines()[len3 - 3])
-                print(outputstring.splitlines()[len3 - 2])
-            except:
-                print("nothing to print")
+            if (outputstring.splitlines()[len3 - 5][0:6])=="Ping s":
+                try:
+                    print("\n")
+                    print(outputstring.splitlines()[len3 - 5])
+                    print(outputstring.splitlines()[len3 - 4])
+                    print(outputstring.splitlines()[len3 - 3])
+                    print(outputstring.splitlines()[len3 - 2])
+                except:
+                    print("nothing to print")
             openfile.close()
             # print("output file closed")
             sleep(0.05)

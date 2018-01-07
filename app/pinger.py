@@ -6,12 +6,14 @@ from app import printer, startasthread, pingcomponents
 def pinger(store, pingnumber, primsec, buttondis, buttonen, prefix):
     # print(prefix)
     '''Takes a store number, index as INT, primsec as STRING sets primary or secondary test'''
+
     print("**********************************")
+    displayconfirmationline = "Pinging {}{} {} times".format(prefix, store, pingnumber)
     if primsec == "primary":
-        print("ping -n {} -l 1345 {}{} > 1\\temp{}.txt".format(pingnumber, prefix, store, store))
+        print(displayconfirmationline)
         pingthread = Popen("ping -n {} -l 1345 {}{} > 1\\temp{}.txt".format(pingnumber, prefix, store, store), shell=True)
     if primsec == "secondary":
-        print("ping -n {} -l 4000 {}{} > 1\\temp{}.txt".format(pingnumber, prefix, store, store))
+        print(displayconfirmationline)
         pingthread = Popen("ping -n {} -l 4000 {}{} > 1\\temp{}.txt".format(pingnumber, prefix, store, store), shell=True)
     pingcomponents.pingcomponents["process"] = pingthread.pid
     #print(pingcomponents.pingcomponents["process"])
@@ -30,7 +32,7 @@ def pinger(store, pingnumber, primsec, buttondis, buttonen, prefix):
             # print('waiting timeout')
             # if threadalive == False:
             sleep(0.05)
-            print("\nPing Complete. Start a new ping with the GUI.")
+
             buttondis['state'] = 'normal'  # reenables buttons when ping completes.
             buttonen['state'] = 'disabled'
             os.system("del 1\\temp{}.txt".format(store))

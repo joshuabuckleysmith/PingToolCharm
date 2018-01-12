@@ -5,3 +5,6 @@ pingcomponents["pingnumber"] = "1"
 pingcomponents["prefix"] = "IP Address"
 pingcomponents["cancelled"] = "0"
 pingcomponents["openfile"] = ""
+pingcomponents["log"] = "Empty Log"
+pingcomponents["logline"] = 0
+pingcomponents["threadkilled"] = 0
